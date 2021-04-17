@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>error</title>
+    <meta name="description" content="error page"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link
+            rel="stylesheet"
+            th:href="@{/assets/bootstrap/css/bootstrap.min.css}"
+            href="../static/assets/bootstrap/css/bootstrap.min.css"
+    />
+    <style>
+        .error-wrapper {
+            height: 100%;
+            background: #f5f7f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .error-wrapper strong {
+            color: #fff;
+            font-size: 120px;
+            line-height: 120px;
+            font-family: Roboto-Black, Roboto;
+            font-weight: 900;
+            -webkit-text-stroke: 1px #c5c8ce;
+            text-stroke: 1px #c5c8ce;
+        }
+
+        .error-wrapper .status-text {
+            font-size: 70px;
+            font-size: 80px;
+            line-height: 80px;
+        }
+
+        p {
+            font-size: 16px;
+            font-family: Roboto-Regular, Roboto;
+            font-weight: 400;
+            color: #515a6e;
+            line-height: 21px;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body style="height: 100vh">
+<div class="error-wrapper">
+    <strong class="status-text">Status</strong>
+    <strong th:text="${status}"></strong>
+    <div>
+        <p th:text="${error}"></p>
+        <p th:text="${message}"></p>
+        <p th:text="${timestamp}"></p>
+    </div>
+</div>
+</body>
+</html>
